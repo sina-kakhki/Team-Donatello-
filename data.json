@@ -1,0 +1,62 @@
+{
+    "Quackalot": [
+        {
+            "id": 1,
+            "topic": "Electronic Duck Association",
+            "messages": [
+                {
+                    "name": "Daffy",
+                    "date": "01/01/2021",
+                    "message": "Hey all"
+                },
+                {
+                    "name": "Donald",
+                    "date": "01/01/2021",
+                    "message": "Anyone looking to quack?"
+                },
+                {
+                    "name": "Daisy",
+                    "date": "01/02/2021",
+                    "message": "No"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "topic": "Ducklings Only",
+            "messages": [
+                {
+                    "name": "Huey",
+                    "date": "01/03/2021",
+                    "message": "Hungry, looking for cheese and quackers"
+                },
+                {
+                    "name": "Dewey",
+                    "date": "02/03/2021",
+                    "message": "I have some"
+                },
+                {
+                    "name": "Louie",
+                    "date": "03/03/2021",
+                    "message": "On my way, save some for me"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "topic": "Duck Meetup",
+            "messages": [
+                {
+                    "name": "Donald",
+                    "date": "01/01/2021",
+                    "message": "Yooo"
+                },
+                {
+                    "name": "Daffy",
+                    "date": "01/01/2021",
+                    "message": "Sup"
+                }
+            ]
+        }
+    ]
+}
