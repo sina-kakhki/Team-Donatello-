@@ -12,7 +12,7 @@ server.use(express.urlencoded({ extended: false }))
 // Handlebars configuration
 server.engine('hbs', hbs({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
-server.use('/chats',routes)  //not sure about chats?! check with team.
+server.use('/duck',routes)
 
 // Your routes/router(s) should go here
 module.exports = server
