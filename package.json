@@ -1,0 +1,26 @@
+{
+  "name": "team-donatello-",
+  "version": "1.0.0",
+  "description": "friday-group-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index",
+    "dev": "nodemon index --ignore data.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kahikatea-2021/Team-Donatello-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kahikatea-2021/Team-Donatello-/issues"
+  },
+  "homepage": "https://github.com/kahikatea-2021/Team-Donatello-#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "nodemon": "^2.0.7"
+  }
+}
