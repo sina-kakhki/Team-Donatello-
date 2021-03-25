@@ -14,3 +14,6 @@ server.set('view engine', 'hbs')
 // Your routes/router(s) should go here
 module.exports = server
 
+server.get('/', (req, res) => {
+  res.render('home')
+})
