@@ -17,3 +17,7 @@ module.exports = server
 server.get('/', (req, res) => {
   res.render('home')
 })
+
+server.get('/messenger', (req, res) => {
+  res.render('messenger')
+})
