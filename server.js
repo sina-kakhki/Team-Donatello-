@@ -25,6 +25,6 @@ server.get('/messenger', (req, res) => {
   res.render('messenger')
 })
 
-server.get('/', function (req, res) {
-  res.send('GET request to homepage')
+server.get('/*', function (req, res) {
+  res.redirect("https://www.youtube.com/watch?v=F-X4SLhorvw")
 })
