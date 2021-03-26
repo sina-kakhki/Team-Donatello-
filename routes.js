@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const fs = require('fs')
+const { parse } = require('path')
 const path = require('path')
 
 // const data = require('data')
@@ -41,6 +42,24 @@ router.get('/message', (req, res) => {
   })
 })
 
+router.get('/message/:id', (req, res) => {
+
+  fs.readFile(filename, 'utf8', (err, content) => {
+
+    const viewData = {}
+    try {
+      const parsedData = JSON.parse(content)
+      viewData.message = parsedData.Quackalot.find(({id}) => id === Number(req.params.id))
+    } catch (parseError) {
+
+     console.log(parseError)
+    }
+
+    res.render('messenger', viewData)
+  })
+})
+
+
 router.get('/history', (req, res) => {
   fs.readFile(filename, 'utf8', (err, content) => {
     const viewData = {}
@@ -57,6 +76,28 @@ router.get('/history', (req, res) => {
 
   //POST
   router.post('/handleMessage', function (req, res) {
-    false.readfile
-    res.send('POST request to homepage')
+    const createdDate = new Date().toLocaleDateString("en-NZ")
+    const {message, topic, id} = req.body
+    fs.readFile(filename, 'utf8', (err, content) => {
+      try{
+        const parsedData = JSON.parse(content)
+        const dumbName = parsedData.Quackalot.find(ele => ele.id === id)
+        if(dumbName){
+          dumbName.messages.push({"name":'', "date": createdDate, "message": message})
+        }else{
+          dumbName = {"id": parsedData.Quackalot.length+1,"topic": topic, "messages": []}
+          dumbName.messages.push({"name":'', "date": createdDate, "message": message})
+        }
+        fs.writeFile(filename, JSON.stringify(parsedData), 'utf8', (err)=>{
+          if(err){
+          console.log('LOOK AT ALL THESE CHICKENs')
+          res.redirect("https://www.youtube.com/watch?v=F-X4SLhorvw")
+          }else{
+            res.redirect(`/duck/message/${id}`)
+          }
+        })
+      }catch(e){
+        console.log(e)
+      }
+    })
   })
