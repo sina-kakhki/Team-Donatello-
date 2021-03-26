@@ -4,9 +4,13 @@ function processForm(e) {
   return false
 }
 
-// const form = document.getElementById("chatForm")
-// if (form.attachEvent) {
-//   form.attachEvent("submit", processForm)
-// } else {
-//   form.addEventListener("submit", processForm)
-// }
+const form = document.getElementById("chatForm")
+if (form.attachEvent) {
+  form.attachEvent("submit", processForm)
+} else {
+  form.addEventListener("submit", processForm)
+}
+
+const chat = document.getElementById("chat")
+chat.scrollTop = chat.scrollHeight;
+

@@ -33,7 +33,7 @@
                 {
                     "name": "Dewey",
                     "date": "02/03/2021",
-                    "m{{#each }}essage": "I have some"
+                    "message": "I have some"
                 },
                 {
                     "name": "Louie",

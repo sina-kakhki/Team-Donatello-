@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
     try {
       const parsedData = JSON.parse(content)
       viewData.messageHistory = parsedData.Quackalot
+      console.log(messageHistory)
     } catch (parseError) {
 
       console.log(parseError)
@@ -37,7 +38,6 @@ router.get('/message', (req, res) => {
 
      console.log(parseError)
     }
-
     res.render('messenger', viewData)
   })
 })
@@ -50,11 +50,12 @@ router.get('/message/:id', (req, res) => {
     try {
       const parsedData = JSON.parse(content)
       viewData.message = parsedData.Quackalot.find(({id}) => id === Number(req.params.id))
+      viewData.message.messages = viewData.message.messages.reverse()
     } catch (parseError) {
 
      console.log(parseError)
     }
-
+    console.log(viewData)
     res.render('messenger', viewData)
   })
 })
@@ -78,16 +79,18 @@ router.get('/history', (req, res) => {
   router.post('/handleMessage', function (req, res) {
     const createdDate = new Date().toLocaleDateString("en-NZ")
     const {message, topic, id} = req.body
+    console.log (req.body)
     fs.readFile(filename, 'utf8', (err, content) => {
       try{
         const parsedData = JSON.parse(content)
-        const dumbName = parsedData.Quackalot.find(ele => ele.id === id)
+        let dumbName = parsedData.Quackalot.find(ele => ele.id === Number(id))
         if(dumbName){
           dumbName.messages.push({"name":'', "date": createdDate, "message": message})
         }else{
           dumbName = {"id": parsedData.Quackalot.length+1,"topic": topic, "messages": []}
           dumbName.messages.push({"name":'', "date": createdDate, "message": message})
         }
+        // console.log(dumbName)
         fs.writeFile(filename, JSON.stringify(parsedData), 'utf8', (err)=>{
           if(err){
           console.log('LOOK AT ALL THESE CHICKENs')
