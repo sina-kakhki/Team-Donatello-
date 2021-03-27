@@ -4,9 +4,15 @@ const messageBox = document.getElementById('chat-box')
 
 
 form.addEventListener("submit", processForm)
+messageBox.addEventListener('keydown', processKeyPress)
 
 function processForm(e) {
-  e.preventDefault()
+  if (e) {
+    e.preventDefault()
+  }
+
+  quack()
+
   const message = messageBox.value.toString()
   const id = document.getElementById('message-id').value.toString()
   const date = new Date().toLocaleDateString('en-NZ')
@@ -24,9 +30,27 @@ function processForm(e) {
 
   postFormData('/duck/handleMessage', params)
 
+  messageBox.value = ''
+
   chat.scrollTop = chat.scrollHeight;
 
+  messageBox.focus()
+
   return false
+}
+
+function processKeyPress(e) {
+  if (e.code.toString() === 'Enter') {
+    e.preventDefault()
+    processForm()
+    return false
+  }
+  quack()
+}
+
+function quack() {
+  const sound = new Audio('/sounds/quack.mp3')
+  sound.play()
 }
 
 function postFormData(url, content) {
