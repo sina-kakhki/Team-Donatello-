@@ -12,13 +12,13 @@ server.use(express.urlencoded({ extended: false }))
 // Handlebars configuration
 server.engine('hbs', hbs({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
-server.use('/duck',routes)
+server.use('/duck', routes)
 
 // Your routes/router(s) should go here
 module.exports = server
 
 server.get('/', (req, res) => {
-  res.render('home')
+  res.redirect('/duck')
 })
 
 server.get('/messenger', (req, res) => {
