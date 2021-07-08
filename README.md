@@ -38,7 +38,7 @@ Chat Room One Page|Chat Room Two Page
 
 - Sina Kakhki - [@sina-kakhki](https://github.com/sina-kakhki)
 
-- Yuan - [@jonathan-zhou](https://github.com/jonathan-zhou)
+- Yuan - [@seegg](https://github.com/seegg)
 
 - Johann Besas - [@johannbesas](https://github.com/johannbesas)
 
