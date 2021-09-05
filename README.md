@@ -1,6 +1,6 @@
 # Quack A Lot!
 
-This is the first one day group project that we've done at Dev Academy. Quack A Lot is a website that has the looks of a chat rooms app but it's not actually one, the main purpose of creating this website was to practice creating routes using ExpressJS and Java Script.
+This is the first one day group project that I've done at Dev Academy. Quack A Lot is a website that has the looks of a chat rooms app but it's not actually one, the main purpose of creating this website was to practice creating routes using ExpressJS and Java Script.
 
 Users can enter chat rooms by clicking on them, then type in a message and submit it. The message will show up on the chat screen with the date that it was submitted.
 
